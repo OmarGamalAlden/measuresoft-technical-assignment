@@ -1,0 +1,80 @@
+.Home{
+    background-color: #24353F;
+    position: relative;
+}
+.content{
+    width: 60%;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    background-color: #24353F;
+    box-shadow: -5px 2px 54px -9px rgb(0 0 0);
+}
+.content button a{
+    color: #18A2B8;
+}
+.content button{
+    background-color: #24353F;
+    border: #18A2B8 1px solid;
+}
+.content input{
+    background-color: #24353F;
+    color: white;
+}
+.content h2{
+    color: #18A2B8;
+    font-size: 2rem;
+}
+.content span a{
+    text-decoration: none;
+    color: white;
+}
+.content span a:hover{
+    text-decoration: underline !important;
+    color: white;
+}
+.inputs button:hover{
+    background-color: #18A2B8;
+}
+.inputs button:hover a{
+    color: white;
+}
+.btn1{
+    border: #28A745 1px solid;
+    background-color: #24353F;
+    width: 80px;
+    border-radius: 5px;
+}
+#welcomePage{
+    position: relative;
+}
+.container2{
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    right: 0px;
+}
+.container2 p{
+    color: #18A2B8;
+}
+.banar{
+    box-shadow: -5px 2px 54px -9px rgb(0 0 0);
+}
+.test{
+    display: flex;
+    border: #28A745 2px solid;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 7px 0px;
+    color: white;
+    font-size: 1rem;
+}
+.test i{
+    color: #28A745;
+    font-size: 20px;
+    padding: 0px 5px;
+}
+.test p{
+    margin-bottom: unset;
+}

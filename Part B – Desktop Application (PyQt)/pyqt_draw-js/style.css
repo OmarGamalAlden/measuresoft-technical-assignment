@@ -1,0 +1,19 @@
+body {
+  background: #222;
+  color: white;
+  font-family: Arial;
+}
+
+.controls {
+  margin: 20px;
+}
+
+canvas {
+  background: white;
+  display: inline-block;
+  margin: 20px;
+  border: 1px solid #555;
+}
+.board {
+  text-align: center;
+}

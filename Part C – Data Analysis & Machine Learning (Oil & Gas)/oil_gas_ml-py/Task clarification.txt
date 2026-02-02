@@ -1,0 +1,56 @@
+📄 Project Explanation – Oil Price Anomaly Detection
+
+In this task, I worked on analyzing historical crude oil prices to detect unusual changes between consecutive years.
+
+The main idea was not to build a complex machine learning model, but to solve the problem using a simple and clear statistical approach that fits the nature of the data.
+
+Step 1: Data Loading
+
+First, I read the dataset from a CSV file and extracted two main values:
+
+* The year
+* The oil price for that year
+
+I stored these values in separate lists to make them easy to process later.
+
+Step 2: Year-to-Year Price Change
+
+Instead of working directly with prices, I calculated the difference in price between each year and the year before it.
+This helped me focus on how much the price changed, not just the price itself.
+
+Step 3: Define What Is “Normal”
+
+To understand what a normal price change looks like, I calculated:
+
+* The average (mean) yearly change
+* The standard deviation, which shows how much prices usually vary
+
+These two values give a clear baseline for normal behavior.
+
+Step 4: Detect Anomalies
+
+For each yearly price change, I measured how far it was from the average using a Z-score.
+If the change was much larger than normal (above a chosen threshold), I marked that year as an anomaly.
+
+This means the price movement in that year was unusually high or low compared to typical behavior.
+
+Step 5: Output Results
+
+Finally, I printed all detected anomalies with:
+
+* The year
+* The oil price
+* The size of the change
+* How unusual it was compared to normal changes
+
+This makes the results easy to read and understand.
+
+Why This Approach
+
+I chose this method because it is:
+
+* Simple and transparent
+* Easy to explain and debug
+* Suitable for historical time-based data
+
+It achieves the goal of anomaly detection without unnecessary complexity.

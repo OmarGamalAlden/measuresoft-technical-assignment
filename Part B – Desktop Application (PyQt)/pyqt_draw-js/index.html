@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Draw App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="board">
+      <div class="controls">
+        <select id="shape">
+          <option value="line">Line</option>
+          <option value="rect">Rectangle</option>
+          <option value="ellipse">Ellipse</option>
+        </select>
+
+        <input type="color" id="color" />
+        <button id="clear">Clear</button>
+      </div>
+
+      <canvas id="canvas" width="900" height="500"></canvas>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

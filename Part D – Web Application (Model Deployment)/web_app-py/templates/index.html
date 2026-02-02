@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oil Price Anomaly Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/all.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <section class="vh-100 Home">
+      <div class="container">
+        <div class="content m-auto py-5 ps-5 pe-5">
+          <h2 class="pb-3 text-center">Oil Price Detection</h2>
+
+          <!-- FORM CONNECTED TO FLASK -->
+          <form method="POST">
+            <label class="text-white">Previous Year Price:</label>
+            <input
+              name="prev_price"
+              class="form-control my-2 mb-3"
+              type="number"
+              step="any"
+              required
+              placeholder="Enter Previous Year Price"
+            />
+
+            <label class="text-white">Current Year Price:</label>
+            <input
+              name="curr_price"
+              class="form-control my-2"
+              type="number"
+              step="any"
+              required
+              placeholder="Enter Current Year Price"
+            />
+
+            <button type="submit" class="mt-5 form-control mb-3">Check</button>
+          </form>
+
+          <!-- RESULT SECTION -->
+          {% if result %}
+          <div id="resultBox" class="mt-4 text-center">
+            <h4 class="text-white">{{ result }}</h4>
+            <p class="text-white">Price Change: {{ details.change }}</p>
+            <p class="text-white">Z-score: {{ details.zScore }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+      const prevInput = document.querySelector('input[name="prev_price"]');
+      const currInput = document.querySelector('input[name="curr_price"]');
+      const resultBox = document.getElementById("resultBox");
+
+      function hideResult() {
+        if (resultBox) {
+          resultBox.style.display = "none";
+        }
+      }
+
+      if (prevInput) prevInput.addEventListener("input", hideResult);
+      if (currInput) currInput.addEventListener("input", hideResult);
+    </script>
+  </body>
+</html>
