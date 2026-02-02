@@ -1,5 +1,3 @@
----
-
 # 📄 README — Part B
 
 ## Desktop Application (PyQt)
@@ -81,5 +79,3 @@ python main.py
 - The goal was logic clarity, not advanced UI
 - Both versions follow the same drawing flow
 - Code was kept simple and readable
-
----
