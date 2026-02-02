@@ -1,15 +1,20 @@
----
-# 📄 README
+# 📄 README — Root Project
 
 ## Programmer – Measuresoft Task
 
-### Project Overview
+---
 
-This project contains multiple tasks that focus on **problem solving**,
-**logic clarity**, and **translating ideas between Python and JavaScript**.
+## Project Overview
 
-The goal of this project is **not advanced frameworks or complex machine learning**,
-but writing clear, understandable code that solves real problems.
+This project contains multiple tasks designed to evaluate problem solving skills,
+code clarity, and the ability to work with different technologies.
+
+The focus is on:
+
+- Clear logic
+- Simple solutions
+- Completing full pipelines rather than partial demos
+
 ---
 
 ## Project Structure
@@ -34,81 +39,49 @@ Programmer - Measuresoft Task/
 
 ---
 
-## Part B – Desktop Application (PyQt)
+## Part B – Desktop Application
 
-A simple drawing application that allows the user to draw shapes using the mouse.
-
-**Implemented twice:**
+A simple drawing application implemented using:
 
 - Python (PyQt)
 - JavaScript (HTML Canvas)
 
-**Focus:**
+Focus:
 
 - Mouse events
 - Drawing logic
-- Understanding how the same idea can be implemented in different languages
+- Desktop UI fundamentals
 
 ---
 
-## Part C – Data Analysis & Machine Learning (Oil & Gas)
+## Part C – Data Analysis & Machine Learning
 
-Analysis of historical crude oil prices to detect unusual price changes.
-
-**Key points:**
-
-- Uses simple statistical analysis
-- Calculates year-to-year price changes
-- Detects anomalies using Z-score
-- No heavy machine learning libraries
-
-**Focus:**
-
-- Data understanding
-- Logic clarity
-- Choosing the simplest solution that fits the problem
+- Historical oil price analysis
+- Feature engineering (price change)
+- Anomaly detection using IsolationForest
+- Trained model saved as `model.pkl`
 
 ---
 
 ## Part D – Web Application (Model Deployment)
 
-A small web application that allows the user to test whether a price change
-is normal or anomalous.
-
-**Implemented twice:**
-
-- Python (Flask)
-- JavaScript (Node.js + Express)
-
-**Focus:**
-
-- Backend logic
-- Handling user input
-- Applying previously calculated statistical values
+- Flask web application
+- Loads trained ML model
+- Accepts user input
+- Displays prediction result
 
 ---
 
-## Technologies Used
+## Setup Notes (Important)
 
-- Python (PyQt, Flask)
-- JavaScript (Node.js, Express)
-- HTML / CSS
-- Bootstrap
-
----
-
-## General Notes
-
-- The project focuses on clarity and simplicity
-- All tasks avoid unnecessary complexity
-- Logic is prioritized over frameworks
-- Each task has its own README with detailed instructions
+- Each part uses its own virtual environment
+- Dependencies must be installed per task
+- `model.pkl` must be generated in Part C before running Part D
 
 ---
 
-## Final Note
+## Final Notes
 
-Each part of this project was solved using the **simplest and most suitable approach**,
-with an emphasis on understanding and explainability.
-
----
+- The project avoids unnecessary complexity
+- All tasks are fully runnable following the documented steps
+- Emphasis is placed on understanding and explainability

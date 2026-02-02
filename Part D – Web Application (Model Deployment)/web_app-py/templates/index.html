@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Oil Price Anomaly Detection</title>
+
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
@@ -23,7 +24,9 @@
     <section class="vh-100 Home">
       <div class="container">
         <div class="content m-auto py-5 ps-5 pe-5">
-          <h2 class="pb-3 text-center">Oil Price Detection</h2>
+          <h2 class="pb-3 text-center text-white">
+            Oil Price Anomaly Detection
+          </h2>
 
           <!-- FORM CONNECTED TO FLASK -->
           <form method="POST">
@@ -54,13 +57,13 @@
           {% if result %}
           <div id="resultBox" class="mt-4 text-center">
             <h4 class="text-white">{{ result }}</h4>
-            <p class="text-white">Price Change: {{ details.change }}</p>
-            <p class="text-white">Z-score: {{ details.zScore }}</p>
+            <p class="text-white">Price Change: {{ price_change }}</p>
           </div>
           {% endif %}
         </div>
       </div>
     </section>
+
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script>
       const prevInput = document.querySelector('input[name="prev_price"]');

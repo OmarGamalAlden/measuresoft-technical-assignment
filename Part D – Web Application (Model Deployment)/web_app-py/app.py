@@ -1,46 +1,41 @@
 from flask import Flask, render_template, request
+import joblib
+import numpy as np
 
 app = Flask(__name__)
 
-# values calculated before from data analysis
-averageChange = 3.939133713043478
-standardDeviation = 49.01342953750396
-
-# if value is far from normal -> anomaly
-Z_THRESHOLD = 3
-
+# -----------------------------------
+# Load trained ML model
+# -----------------------------------
+model = joblib.load("model.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
-    details = None
+    zResult = None
 
     if request.method == "POST":
-        previousPrice = float(request.form["prev_price"])
-        currentPrice = float(request.form["curr_price"])
+        prev_price = float(request.form["prev_price"])
+        curr_price = float(request.form["curr_price"])
 
-        # calculate price difference
-        change = currentPrice - previousPrice
+        # calculate feature (same as training)
+        price_change = curr_price - prev_price
 
-        # measure how unusual this change is
-        zScore = abs((change - averageChange) / standardDeviation)
+        # model expects 2D array
+        prediction = model.predict([[price_change]])
 
-        if zScore > Z_THRESHOLD:
+        if prediction[0] == -1:
             result = "Anomaly detected"
         else:
             result = "Normal price movement"
 
-        details = {
-            "change": round(change, 2),
-            "zScore": round(zScore, 2)
-        }
+        zResult = round(price_change, 2)
 
     return render_template(
         "index.html",
         result=result,
-        details=details
+        price_change=zResult
     )
-
 
 if __name__ == "__main__":
     app.run(debug=True)

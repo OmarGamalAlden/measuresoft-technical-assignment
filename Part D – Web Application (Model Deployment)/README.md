@@ -2,94 +2,111 @@
 
 ## Web Application (Model Deployment)
 
-**Folder:** `Part D – Web Application (Model Deployment)`
-
-### Project Structure
-
-```
-Part D – Web Application (Model Deployment)/
-│
-├─ web_app-py/
-│   ├─ app.py
-│   ├─ templates/
-│   │   └─ index.html
-│   ├─ static/
-│   │   └─ css/
-│   │   └─ js/
-│
-├─ web_app-js/
-│   ├─ app.js
-│   ├─ index.html
-│   ├─ static/
-│   │   └─ css/
-│   │   └─ js/
-├─ README.md
-```
+**Folder:**
+`Part D – Web Application (Model Deployment)/web_app-py`
 
 ---
 
-### Overview
+## Overview
 
-This task is a small web application that allows the user
-to test whether a price change is normal or anomalous.
+This task demonstrates **deploying a trained machine learning model** using a web application.
 
-It uses statistical values calculated previously during data analysis **Task - C**.
+The application:
+
+- Loads a trained ML model
+- Accepts user input
+- Performs prediction
+- Displays the result in the browser
 
 ---
 
-### How It Works
+## How It Works
 
 1. User enters:
-   - Previous year price
-   - Current year price
+   - Previous year oil price
+   - Current year oil price
 
-2. The application calculates:
-   - Price difference
-   - Z-score
-
-3. The result is displayed as:
-   - Normal price movement
-   - Or anomaly detected
+2. The application calculates the price change
+3. The trained model predicts whether the change is:
+   - Normal
+   - Or an anomaly
 
 ---
 
-### Python Version
+## Project Structure
 
-- Built using Flask
-- Handles form submission and calculation on the backend
-
-### JavaScript Version
-
-- Built using Node.js and Express
-- Same logic rewritten in JavaScript
+```
+web_app-py/
+│
+├─ app.py
+├─ model.pkl
+├─ templates/
+│   └─ index.html
+├─ static/
+│   └─ css/
+│   └─ js/
+├─ venv/
+```
 
 ---
 
-### How to Run
+## Required File
 
-**Python version**
+⚠️ **Important**
+
+Before running this application:
+
+- Copy `model.pkl` from **Part C**
+- Paste it into this folder (`web_app-py/`)
+
+Without this file, the application will not run.
+
+---
+
+## Environment Setup
+
+### 1️⃣ Create virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 2️⃣ Activate virtual environment
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## Install Dependencies
+
+The model was trained using `scikit-learn`, so it must be installed here as well.
+
+```bash
+python -m pip install flask scikit-learn joblib numpy
+```
+
+---
+
+## Run the Web Application
 
 ```bash
 python app.py
 ```
 
-**JavaScript version**
+---
 
-```bash
-npm install
-node app.js
-```
-
-Then open:
+## Open in Browser
 
 ```
-http://localhost:3000
+http://127.0.0.1:5000
 ```
 
 ---
 
-### Notes
+## Notes
 
-- This task focuses on simple deployment logic
-- No heavy ML frameworks were used
-- Backend logic is intentionally simple
+- The model is loaded using `joblib.load`
+- The same feature used during training is used during prediction
+- This represents a complete and valid **model deployment**
