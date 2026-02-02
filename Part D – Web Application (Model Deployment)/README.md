@@ -1,5 +1,3 @@
----
-
 # 📄 README — Part D
 
 ## Web Application (Model Deployment)
@@ -95,7 +93,3 @@ http://localhost:3000
 - This task focuses on simple deployment logic
 - No heavy ML frameworks were used
 - Backend logic is intentionally simple
-
----
-
----
