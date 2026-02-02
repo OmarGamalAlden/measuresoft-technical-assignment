@@ -1,5 +1,3 @@
----
-
 # 📄 README — Part C
 
 ## Data Analysis & Machine Learning (Oil & Gas)
@@ -100,5 +98,3 @@ node analysis.js
 
 - This task focuses on data understanding, not model training
 - Results from both versions are consistent
-
----
